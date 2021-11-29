@@ -5,6 +5,6 @@
     "\\src\\app",
     "\\src\\app\\novo-evento"
   ],
-  "SelectedNode": "\\src\\styles.scss",
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }
