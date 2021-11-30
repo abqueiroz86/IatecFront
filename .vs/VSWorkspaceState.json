@@ -1,10 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
     "\\src\\app",
-    "\\src\\app\\novo-evento"
+    "\\src\\app\\eventos",
+    "\\src\\app\\models",
+    "\\src\\app\\novo-evento",
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\app.module.ts",
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }
