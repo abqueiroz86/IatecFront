@@ -6,15 +6,9 @@ import { Evento } from '../models/evento.model';
   providedIn: 'root',
 })
 export class EventoService {
-  private listaEventos: any[];
   private url = 'http://localhost:5106/api/Usuarios/GetEventosUsuarios?id=1';
 
   constructor(private httpClient: HttpClient) {
-    this.listaEventos = [];
-  }
-
-  get eventos() {
-    return this.listaEventos;
   }
 
   buscarEventos() {
@@ -22,12 +16,6 @@ export class EventoService {
   }
 
   adicionar(evento: any) {
-    this.hidratar(evento);
-
-    this.listaEventos.push(evento);
-  }
-
-  private hidratar(evento: any) {
-    evento.data = new Date();
+    return this.httpClient.post<Evento>(this.url, evento);
   }
 }

@@ -1,0 +1,11 @@
+<section class="container">
+  <h2 class="formulario_titulo">Selecione o usuário</h2>
+  <select class="combo" name="select" *ngIf="usuarios.length > 0; else listaVazia">
+    <option value="0">Selecionar</option>
+    <option value="{{lista.id}}" *ngFor="let lista of usuarios">{{lista.nome}}</option>
+  </select>
+
+  <ng-template #listaVazia>
+    <p class="sem_evento">Nenhum usuário cadastrado</p>
+  </ng-template>
+</section>

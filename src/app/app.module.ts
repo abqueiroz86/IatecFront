@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NovoEventoComponent } from './novo-evento/novo-evento.component';
 import { EventosComponent } from './eventos/eventos.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HttpClientModule } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
@@ -15,7 +16,8 @@ registerLocaleData(localePt, 'pt');
   declarations: [
     AppComponent,
     NovoEventoComponent,
-    EventosComponent
+    EventosComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,
