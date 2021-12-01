@@ -1,6 +1,6 @@
 import { UsuarioService } from './../services/usuario.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuarios',

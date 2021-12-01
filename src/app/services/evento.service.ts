@@ -16,6 +16,7 @@ export class EventoService {
   }
 
   adicionar(evento: any) {
-    return this.httpClient.post<Evento>(this.url, evento);
+    console.log(evento);
+    return this.httpClient.post<Evento>('http://localhost:5106/api/EventosUsuarios', evento);
   }
 }

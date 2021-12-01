@@ -1,22 +1,29 @@
-<table class="tabela" *ngIf="eventos.length > 0; else listaVazia">
-  <thead class="tabela__cabecalho">
+<section class="container">
+  <h2 class="formulario_titulo">Eventos do usuário</h2>
+  <table class="tabela" *ngIf="eventos.length > 0; else listaVazia">
+    <thead class="tabela__cabecalho">
     <th class="tabela__cabecalho__conteudo">Evento</th>
     <th class="tabela__cabecalho__conteudo">Descrição</th>
     <th class="tabela__cabecalho__conteudo">Local</th>
     <th class="tabela__cabecalho__conteudo">Tipo</th>
     <th class="tabela__cabecalho__conteudo">Data</th>
-  </thead>
-  <tbody>
-    <tr class="tabela__linha" *ngFor="let lista of eventos">
-      <td class="tabela__conteudo">{{lista.evento.nome}}</td>
-      <td class="tabela__conteudo">{{lista.evento.descricao}}</td>
-      <td class="tabela__conteudo">{{lista.evento.local}}</td>
-      <td class="tabela__conteudo">{{lista.evento.tipo}}</td>
-      <td class="tabela__conteudo">{{lista.evento.dataHora | date: "short"}}</td>
-    </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <tr class="tabela__linha" *ngFor="let lista of eventos">
+        <td class="tabela__conteudo">{{lista.evento.nome}}</td>
+        <td class="tabela__conteudo">{{lista.evento.descricao}}</td>
+        <td class="tabela__conteudo">{{lista.evento.local}}</td>
+        <td class="tabela__conteudo">{{lista.evento.tipo}}</td>
+        <td class="tabela__conteudo">{{lista.evento.dataHora | date: "short"}}</td>
+      </tr>
+    </tbody>
+  </table>
 
-<ng-template #listaVazia>
-  <p class="sem_evento">Nenhum evento cadastrado</p>
-</ng-template>
+  <div class="botao-wrapper">
+    <button (click)="novoUsuario()" class="botao" type="button">Novo Evento</button>
+  </div>
+
+  <ng-template #listaVazia>
+    <p class="sem_evento">Nenhum evento cadastrado</p>
+  </ng-template>
+</section>

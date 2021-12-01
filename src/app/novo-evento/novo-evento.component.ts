@@ -1,4 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { EventoService } from "../services/evento.service";
 
 @Component({
   selector: 'app-novo-evento',
@@ -12,18 +14,27 @@ export class NovoEventoComponent {
   data: string | undefined;
   local: string | undefined;
   participantes: string | undefined;
+  idUsuario: number | undefined;
+  @Input() evento: any;
 
-  gravar() {
-    /*var url = "http://localhost:5000/api/";
+  constructor(private service: EventoService, private router: Router, private route: ActivatedRoute) {
 
-    this.albumList = [];
-    this.http.get(url)
-      .subscribe((response) => {
-        this.albumList = response.json();
-        this.busy = false;
-      }, (response) => {
-        this.errorMessage = "Request failed.";
-      });*/
+  }
+
+  async gravar() {
+    var eventoEnvio = { usuarioId: this.idUsuario, eventoId: 0, evento: { nome: this.nome, descricao: this.descricao, local: this.local, tipo: 'C', dataHora: this.data } };
+    console.log(eventoEnvio);
+    this.service.adicionar(eventoEnvio).subscribe((x) => (this.evento = x));
+    console.log(this.evento);
+
+    this.router.navigate(['/eventos'], { queryParams: { idUsuario: this.idUsuario } });
+  }
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.idUsuario = params['idUsuario'];
+      console.log(this.idUsuario);
+    });
   }
 
 }

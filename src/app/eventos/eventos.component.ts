@@ -11,12 +11,16 @@ export class EventosComponent  {
   @Input() eventos: any[];
   idUsuario: any;
 
-  constructor(private service: EventoService, private route: ActivatedRoute) {
+  constructor(private service: EventoService, private route: ActivatedRoute, private router: Router) {
     this.eventos = [];
   }
 
   buscarEventos(idUsuarios: number): void {
     this.service.buscarEventos(idUsuarios).subscribe((x) => (this.eventos = x));
+  }
+
+  novoUsuario() {
+    this.router.navigate(['/novo-evento'], { queryParams: { idUsuario: this.idUsuario } })
   }
 
   ngOnInit(): void {
