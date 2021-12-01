@@ -1,4 +1,4 @@
-# IatecFront
+# IatecFront - Front-end
 
 Projeto desenvolvido em [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
