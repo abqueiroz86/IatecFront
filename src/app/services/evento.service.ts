@@ -6,13 +6,13 @@ import { Evento } from '../models/evento.model';
   providedIn: 'root',
 })
 export class EventoService {
-  private url = 'http://localhost:5106/api/Usuarios/GetEventosUsuarios?id=1';
+  private url = 'http://localhost:5106/api/Usuarios';
 
   constructor(private httpClient: HttpClient) {
   }
 
-  buscarEventos() {
-    return this.httpClient.get<Evento[]>(this.url);
+  buscarEventos(idUsuario: number) {
+    return this.httpClient.get<Evento[]>(this.url + '/GetEventosUsuarios?id=' + idUsuario);
   }
 
   adicionar(evento: any) {
